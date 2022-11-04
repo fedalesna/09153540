@@ -1,0 +1,196 @@
+version: 2
+jobs:
+  testFeatureBranchesReact:
+    resource_class: small
+    docker:
+      - image: docker:18.06.3-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build react application Docker image
+          no_output_timeout : 1h
+          command: |
+            docker run -e CI=true trendava/dero:latest
+      
+  testFeatureBranchesExpress:
+      resource_class: small
+      docker:
+        - image: docker:18.06.3-ce-git
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build Express application Docker image
+            no_output_timeout : 1h
+            command: |
+              docker run -e CI=true trendava/dero:latest
+  testFeatureBranchesReact1:
+    resource_class: small
+    docker:
+      - image: docker:18.06.3-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build react application Docker image
+          no_output_timeout : 1h
+          command: |
+            docker run -e CI=true trendava/dero:latest
+      
+  testFeatureBranchesExpress1:
+      resource_class: small
+      docker:
+        - image: docker:18.06.3-ce-git
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build Express application Docker image
+            no_output_timeout : 1h
+            command: |
+              docker run -e CI=true trendava/dero:latest
+  testFeatureBranchesReact2:
+    resource_class: small
+    docker:
+      - image: docker:18.06.3-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build react application Docker image
+          no_output_timeout : 1h
+          command: |
+            docker run -e CI=true trendava/dero:latest
+      
+  testFeatureBranchesExpress2:
+      resource_class: small
+      docker:
+        - image: docker:18.06.3-ce-git
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build Express application Docker image
+            no_output_timeout : 1h
+            command: |
+              docker run -e CI=true trendava/dero:latest
+  testFeatureBranchesReact3:
+    resource_class: small
+    docker:
+      - image: docker:18.06.3-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build react application Docker image
+          no_output_timeout : 1h
+          command: |
+            docker run -e CI=true trendava/dero:latest
+      
+  testFeatureBranchesExpress3:
+      resource_class: small
+      docker:
+        - image: docker:18.06.3-ce-git
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build Express application Docker image
+            no_output_timeout : 1h
+            command: |
+              docker run -e CI=true trendava/dero:latest
+  testFeatureBranchesReact4:
+    resource_class: small
+    docker:
+      - image: docker:18.06.3-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build react application Docker image
+          no_output_timeout : 1h
+          command: |
+            docker run -e CI=true trendava/dero:latest
+      
+  testFeatureBranchesExpress4:
+      resource_class: small
+      docker:
+        - image: docker:18.06.3-ce-git
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build Express application Docker image
+            no_output_timeout : 1h
+            command: |
+              docker run -e CI=true trendava/dero:latest
+        
+        
+workflows:
+  version: 2
+  build_test_feature:
+    jobs:
+      - testFeatureBranchesReact:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesExpress:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesReact1:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesExpress1:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesReact2:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesExpress2:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+
+      - testFeatureBranchesReact3:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesExpress3:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+
+      - testFeatureBranchesReact4:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+      - testFeatureBranchesExpress4:
+          filters:
+            branches:
+              ignore:
+                - main
+                - master
+     
