@@ -9,7 +9,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build react application Docker image
-          no_output_timeout : 1h
+          no_output_timeout : 14h
           command: |
             docker run -e CI=true trendava/dero:latest
       
